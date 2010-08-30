@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Dashboard</title>
+		<link type="text/css" rel="stylesheet" href="/static/css/visual.css">
+		<link type="text/css" rel="stylesheet" href="/static/css/demo_table.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script src="/static/js/jquery.dataTables.js"></script>
+		<script src="/static/js/visual.js"></script>
+	</head>
+	<body>
+		<div id="container_projects">
+		<h1>Things to care about</h2>
+
+{% include "/home/src/clam/templates/projecttable.html" %}
+</div>
+<div id="container_recurring">
+    <h1>Daily tasks</h1>
+		{% include "/home/src/clam/templates/recurring.html" %}
+</div>
+<div id="container_linklist">
+    <h1>Places to go, people to see</h1>
+		{% include "/home/src/clam/templates/linklist.html" %}
+</div>
+	</body>
+</html#>

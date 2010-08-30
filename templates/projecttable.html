@@ -1,0 +1,23 @@
+<table class="projectlist">
+<thead>
+ <tr>
+	<th>Title</th>
+	<th>Status</th>
+ </tr>
+</thead>
+<tbody>
+{% for project in projects %}
+<tr>
+	<td>{{project.title}}<span class="todo">
+			<ul>
+			{% for todo in project.todoitems %}
+			<li>{{todo|safe}}</li>
+			{% endfor %}	
+			</ul>
+	</span><span class="projectdetail">{{project.body_markdown|safe}}</span></td>
+	<td><span title="{{project.sortorder}}">{{project.status}}</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+

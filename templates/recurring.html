@@ -1,0 +1,20 @@
+<table class="recurringtasks">
+<thead>
+ <tr>
+	<th>Task</th>
+	{% for date in recur_dates %}
+	<th>{{ date }}</th>
+  {% endfor %}
+ </tr>
+</thead>
+<tbody>
+{% for task,results in recur_tasks.items %}
+<tr class="recurring_row" max="{{task.max}}" task_id="{{task.id}}">
+	<td>{{task.name}}</td>
+	{% for result in results %}
+	<td class="recurring_result">{{result}} </td>
+	{% endfor %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
