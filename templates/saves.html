@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>File save history</title>
+		<link type="text/css" rel="stylesheet" href="/static/css/visual.css">
+		<link type="text/css" rel="stylesheet" href="/static/css/demo_table.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script src="/static/js/jquery.dataTables.js"></script>
+		<script src="/static/js/visual.js"></script>
+	</head>
+	<body>
+		<div id="saves_by_hour">
+			<h1>Saves by hour</h2>
+<table class="savetable">
+<thead>
+ <tr>
+	<th>Hour</th>
+	<th>Saves</th>
+ </tr>
+</thead>
+<tbody>
+{% for (start, end, count) in saves %}
+<tr>
+	<td>{{start}</td>
+	<td>{{saves}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+</div>
+
+</body>
+</html>
