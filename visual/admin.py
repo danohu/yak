@@ -1,4 +1,4 @@
-from clam.visual.models import *
+from yak.visual.models import *
 from django.contrib import admin
 
 class RecurringTaskAdmin(admin.ModelAdmin):

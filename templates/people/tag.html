@@ -1,0 +1,19 @@
+
+<h4>People tagged {{tag.text}}</h4>
+<ul>
+{% for person in tag.people.all %}
+<li>
+<a href="/person/{{person.id}}">{{person.name}}</a> 
+</li>
+{% endfor %}
+</ul>
+
+
+<h4>Notes tagged {{tag.text}}</h4>
+<ul>
+{% for note in tag.notes.all %}
+<li>
+<a href="/note/{{note.id}}">{{note.title}}</a>
+</li>{% endfor %}
+</ul>
+

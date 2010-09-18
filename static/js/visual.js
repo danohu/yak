@@ -28,14 +28,14 @@ $(document).ready(function(){
  $('.recurring_result').each(function(){
 					  var col_html = $(this).parents('table').find('th').eq($(this).prevAll().length).html();	
 						$(this).attr('date', col_html);
-						})
+						});
  $('.recurring_result').click(function(){
 			var data = {
 			    'date' : $(this).attr('date'),
 					'task_id' : $(this).parent('tr').attr('task_id'),
 					'result' : $(this).parent('tr').attr('max')};
 			var cell = $(this);
-			$.get('/clam/do_task', data, function(d,t,r){
+			$.get('/yak/do_task', data, function(d,t,r){
 						//XXX: the callback doesn't work, but I can live with that
 						cell.html(d);
 						if(d == 'Undone'){
@@ -46,12 +46,12 @@ $(document).ready(function(){
 							cell.removeClass('recurring_notdone');
 							cell.addClass('recurring_done');
 						}
-						})
+						});
 			});
  $('.recurring_row').each(function(){
 			var max = $(this).attr('max');
 			$(this).find('td.recurring_result').each(function(i){
-				  else if($(this).html() >= max){
+				  if($(this).html() >= max){
 					   $(this).addClass('recurring_done');
 						 }
 					else{

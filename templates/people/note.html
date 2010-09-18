@@ -1,0 +1,14 @@
+<h4>{{note.title}}</h4>
+<p>{{note.text}}</p>
+Added on {{note.date}}
+In this note: 
+{% for person in note.people.all %}
+<a href="/person/{{person.id}}">{{person.name}}</a> 
+{% endfor %}
+Tagged: 
+{% for tag in note.tags.all %}
+<a href="/tag/{{tag.id}}">{{tag.text}}</a> 
+{% endfor %}
+<hr>
+
+

@@ -1,0 +1,20 @@
+
+table>tr>th+tr>td
+<table>
+	<tr>
+		<th>Date</th>
+		{% for aspect in aspects %}
+		<th>{%aspect%}</th>
+	{%endfor %}
+	</tr>
+	{% for snapshot in snapshots %}
+	<tr>
+		
+		{% for aspect in aspects %}
+		<td>Moo</td>
+		{%endfor %}
+
+	</tr>
+	{%endfor %}
+
+</table>
