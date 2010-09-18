@@ -8,6 +8,7 @@ import glob, json, re
 from collections import defaultdict
 from markdown import markdown
 from datetime import datetime, timedelta
+import dateutil
 from models import RecurringTask, RecurringTaskResult
 import string
 
@@ -65,6 +66,22 @@ def do_task(request):
         dbrow.save()
     return HttpResponse(dbrow.result)
     
+@login_required
+def vimsaves(day = None):
+    if day:
+        try:
+            day = dateutil.parser.parse(day)
+        except ValueError:
+            day = None
+    if day is None:
+        day = datetime.now()
+    data = {
+            day = day,
+            saves = checkins_per_day(day),
+            }
+    return render_to_response('saves.html', data)
+
+
 
 def todolist(body, howmany = 3):
     """XXX: this needs to also incorporate details from non-vim
