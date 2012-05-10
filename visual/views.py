@@ -76,8 +76,8 @@ def vimsaves(day = None):
     if day is None:
         day = datetime.now()
     data = {
-            day = day,
-            saves = checkins_per_day(day),
+            'day' : day,
+            'saves' : checkins_per_day(day),
             }
     return render_to_response('saves.html', data)
 
