@@ -4,6 +4,11 @@
 {% for person in tag.people.all %}
 <li>
 <a href="/person/{{person.id}}">{{person.name}}</a> 
+(
+{% for tag in person.tags.all %}
+<i>
+<a href="/tag/{{ tag.text }} "> {{ tag.text }} </a>, </i>
+{% endfor %})
 </li>
 {% endfor %}
 </ul>
